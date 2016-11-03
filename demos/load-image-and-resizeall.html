@@ -1,0 +1,45 @@
+<!Doctype>
+<html>
+    <head>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="../src/canvawork.js"></script>
+
+        <script>
+            var options = {
+                debug:true,
+                sizes:{
+                    big:{
+                        width: 300,
+                        height: 100
+                    },
+                    med:{
+                        width: 150,
+                        height: 50
+                    },
+                    thumb:{
+                        width: 30,
+                        height: 10
+                    }
+                }
+            }
+            var CanvaWork = new CanvaWork(options);
+
+            CanvaWork.loadImage("../assets/placeholder.png", function(obj){
+                $('body').append('<h1>Original canvas loaded from an image</h1>');
+                $('body').append(obj.canvas);
+                CanvaWork.canvasResizeAll(obj.canvas, function(canvases){
+                    $('body').append('<h1>Canvas Big size</h1>');
+                    $('body').append(canvases[0]);
+                    $('body').append('<h1>Canvas Med size</h1>');
+                    $('body').append(canvases[1]);
+                    $('body').append('<h1>Canvas Thumb size</h1>');
+                    $('body').append(canvases[2]);
+                });
+            });
+        </script>
+    </body>
+</html>
