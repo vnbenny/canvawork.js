@@ -19,7 +19,7 @@
 **Include before closing the body element**
 ```php
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
-<script src="../src/canvawork.js"></script>
+<script src="../src/canvawork.min.js"></script>
 ```
 
 **Initialize**
